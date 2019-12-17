@@ -1,10 +1,19 @@
 <template>
-  <div>item</div>
+  <div>{{fetchedItem}}</div>
 </template>
 
 <script>
-export default {
+import { mapGetters } from 'vuex';
 
+export default {
+  computed: {
+    ...mapGetters([
+      'fetchedItem'
+    ])
+  },
+  created(){
+    this.$store.dispatch('FETCH_ITEM', this.$route.params.id)
+  }
 }
 </script>
 
