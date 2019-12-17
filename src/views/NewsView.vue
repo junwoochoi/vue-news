@@ -1,6 +1,11 @@
 <template>
   <div>
-    <div v-for="item in fetchedNews">{{item}}</div>
+      <p v-for="item in fetchedNews">
+        <a :href="item.url">
+          {{item.title}}
+        </a>
+        <small>{{item.time_ago}} by {{item.user}}</small>
+      </p>
   </div>
 </template>
 
