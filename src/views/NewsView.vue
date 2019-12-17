@@ -1,10 +1,21 @@
 <template>
-  <div>news</div>
+  <div>{{users}}</div>
 </template>
 
 <script>
-export default {
+import {fetchNewsList} from '../api';
 
+export default {
+  data(){
+    return {
+      users : []
+    }
+  },
+  created(){
+    fetchNewsList()
+    .then(res => this.users = res.data)
+    .catch(e => console.error(e))
+  }
 }
 </script>
 
