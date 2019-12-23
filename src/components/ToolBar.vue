@@ -17,12 +17,14 @@ export default {
         color: white;
         background-color: #42b883;
         display: flex;
-        padding: 8px;
+        padding: 16px;
+        font-size: 1.5rem;
     }
     .header .router-link-exact-active{
         color: #35495e;
     }
     .header a{
         color: white;
+        margin-left: 4px;
     }
 </style>
